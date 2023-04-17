@@ -4,38 +4,76 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 </head>
 <body>
-    <h1>Coffee!</h1>
+<main>
+    <div class="Coffee List"> <!--        This is the first panel-->
+        <nav>
+            <a href="/">Home</a>
+            <a href="/">About us</a>
+            <a href="/">Contact Us</a>
+        </nav>
 
+        <div>
+            <h1> Coffee! </h1>
 
-    <div class="container">
-            <!--               ROAST DROP DOWN ITEMS     -->
+            <!--    COFFEE LIST-->
 
-         <form class="row float-end">
-             <label for="roast-selection"></label>
-             <select id="roast-selection">
-                 <option>light</option>
-                 <option>medium</option>
-                 <option>dark</option>
-                 <option>all</option>
-            </select>
-                <input id="submit" type="submit" />
-        </form>
-
-
-<!--    COFFEE LIST-->
-
-        <div class="col-6">
-            <div class="col" id="coffees"></div>
+            <div class="col-6">
+                <div class="col" id="coffees"></div>
+            </div>
         </div>
 
-    </div>         <!--CONTAINER CLOSE DIV-->
+        <footer>
+            <p> Something about coffee </p><!--            come back for this-->
+        </footer>
+    </div>
 
 
+    </div>
 
-    <script src="main.js"></script>
+    <div class="Coffee About">
+        <img src="">
+        <div class="text">
+            <h2> Type of Roast</h2>
+
+            <div class="container">
+                <!--               ROAST DROP DOWN ITEMS     -->
+
+                <form class="row float-end">
+                    <label for="roast-selection"></label>
+                    <select id="roast-selection">
+                        <option>light</option>
+                        <option>medium</option>
+                        <option>dark</option>
+                        <option>all</option>
+                    </select>
+                    <input id="submit" type="submit"/>
+                </form>
+            </div>
+            <p>Something about the hisotry of roast for coffee</p>
+        </div>
+    </div>
+    <div class="Coffee Photos">
+        <div class="text">
+            <h2>Evolution of Coffee</h2>
+            <p>How Coffee was made</p>
+        </div>
+        <img src=" ">
+
+
+    </div>
+
+
+</main>
+
+
+<!--CONTAINER CLOSE DIV-->
+
+
+<script src="main.js"></script>
 </body>
 </html>
