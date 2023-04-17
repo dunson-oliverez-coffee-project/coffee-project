@@ -79,7 +79,6 @@ var submitButton = document.querySelector('#submit');
 
 
 
-
 var roastSelection = document.querySelector('#roast-selection');
 
 
