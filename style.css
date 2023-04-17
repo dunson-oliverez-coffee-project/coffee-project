@@ -4,7 +4,7 @@ body{
 }
 main {
     display: grid;
-    grid-template-columns: 1.3fr 1fr 1fr;
+    grid-template-columns: 1.2fr 1fr 1fr;
     min-height: 100%;
 }
 
@@ -12,41 +12,43 @@ main {
     display: grid;
     grid-template-columns: 1fr;
 }
-.panel .text {
+.panel.text {
     background: ;
     color: ;
     padding: 30px 60px;
 }
-.coffee.list {
-    background: ;
+
+/*First panel*/
+.Coffee.List {
+    background: #9A7B4F ;
     padding: 30px 60px;
     grid-auto-rows: 1fr;
 }
-.coffee.list nav a {
-    color: ;
+.Coffee.List nav a {
+    color: #231709 ;
     text-decoration: none;
     margin-right: 20px;
 }
-.coffee.list p{
+.Coffee.List p{
     color: ;
     max-width: 540px;
     line-height: 2em;
 }
-.coffee.list h1{
+.Coffee.List h1{
     color: ;
     font-size: 3em;
 }
-.coffee.list footer{
+.Coffee.List footer{
     align-self: end;
 }
 
 
 /*middle panel*/
-.coffee.about{
+.Coffee.About{
     grid-template-rows: 3fr 1fr;
     overflow: hidden;
 }
-.coffee.about img {
+.Coffee.About img {
     min-height: 100%;
     min-width: 100%;
 }
@@ -54,11 +56,11 @@ main {
 
 /*right panel*/
 
-.coffee.photos{
+.Coffee.Photos{
     grid-template-rows: 1fr 3fr;
     overflow: hidden;
 }
-.coffee.photos img {
+.Coffee.Photos img {
     min-height: 100%;
     min-width: 100%;
 }
