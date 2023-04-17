@@ -4,7 +4,7 @@
 // TABLE DISPLAY. SHOWS FILTERED COFFEES BY ROAST SELECTION//
 function renderCoffee(coffee) {
     var html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
+    // html += '<td>' + coffee.id + '</td>'; COMMENTED BUT LEAVING INCASE WE DO NEED IT
     html += '<td>' + coffee.name + '</td>';
     html += '<td>' + coffee.roast + '</td>';
     html += '</tr>';
@@ -20,6 +20,10 @@ function renderCoffee(coffee) {
 
 
 function renderCoffees(coffees) {
+    coffees.sort(function (a, b){
+        return b.id - a.id;
+    });
+
     var html = '';
     for(var i = coffees.length - 1; i >= 0; i--) {
         html += renderCoffee(coffees[i]);
@@ -28,7 +32,16 @@ function renderCoffees(coffees) {
 }
 
 
+let searchInput = document.querySelector('#search-input');
+searchInput.addEventListener('input', searchCoffees);
 
+function searchCoffees(){
+    let searchValue = searchInput.value.toLowerCase();
+    let filteredCoffees = coffees.filter(function(coffee){
+        return coffee.name.toLowerCase().includes(searchValue);
+    });
+    tbody.innerHTML = renderCoffees(filteredCoffees);
+}
 
 
 
