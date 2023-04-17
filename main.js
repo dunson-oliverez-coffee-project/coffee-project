@@ -1,8 +1,10 @@
 "use strict"
 
+
+// TABLE DISPLAY. SHOWS FILTERED COFFEES BY ROAST SELECTION//
 function renderCoffee(coffee) {
     var html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
+    // html += '<td>' + coffee.id + '</td>'; COMMENTED BUT LEAVING INCASE WE DO NEED IT
     html += '<td>' + coffee.name + '</td>';
     html += '<td>' + coffee.roast + '</td>';
     html += '</tr>';
@@ -10,13 +12,38 @@ function renderCoffee(coffee) {
     return html;
 }
 
+
+
+
+
+
+
+
 function renderCoffees(coffees) {
+    coffees.sort(function (a, b){
+        return b.id - a.id;
+    });
+
     var html = '';
     for(var i = coffees.length - 1; i >= 0; i--) {
         html += renderCoffee(coffees[i]);
     }
     return html;
 }
+
+
+let searchInput = document.querySelector('#search-input');
+searchInput.addEventListener('input', searchCoffees);
+
+function searchCoffees(){
+    let searchValue = searchInput.value.toLowerCase();
+    let filteredCoffees = coffees.filter(function(coffee){
+        return coffee.name.toLowerCase().includes(searchValue);
+    });
+    tbody.innerHTML = renderCoffees(filteredCoffees);
+}
+
+
 
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
@@ -29,6 +56,12 @@ function updateCoffees(e) {
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
+
+
+
+
+
+
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
@@ -49,8 +82,21 @@ var coffees = [
 ];
 
 var tbody = document.querySelector('#coffees');
+
+
+
+
+
 var submitButton = document.querySelector('#submit');
+
+
+
+
 var roastSelection = document.querySelector('#roast-selection');
+
+
+
+
 
 tbody.innerHTML = renderCoffees(coffees);
 
