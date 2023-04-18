@@ -18,7 +18,8 @@
         html += '</div>';
         return html;
     }
-        function renderCoffees(coffees) {
+
+    function renderCoffees(coffees) {
         var html = '';
         for (var i = coffees.length - 1; i >= 0; i--) {
             html += renderCoffee(coffees[i]);
@@ -43,14 +44,17 @@
         e.preventDefault(); // don't submit the form, we just want to update the data
         var selectedRoast = roastSelection.value;
         var filteredCoffees = [];
-        coffees.forEach(function (coffee) {
-            if (coffee.roast === selectedRoast) {
-                filteredCoffees.push(coffee);
-            }
-        });
+        if(selectedRoast === "all"){
+            filteredCoffees = coffees
+        }else {
+            coffees.forEach(function (coffee) {
+                if (coffee.roast == selectedRoast) {
+                    filteredCoffees.push(coffee);
+                }
+            });
+        }
         tbody.innerHTML = renderCoffees(filteredCoffees);
     }
-
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
     var coffees = [
@@ -78,6 +82,35 @@
 
     tbody.innerHTML = renderCoffees(coffees);
     submitButton.addEventListener('click', updateCoffees);
+
+    let nameAdd = document.querySelector('#add-name');
+    let coffeeAdd = document.querySelector('#add-coffee');
+
+    roastSearch.addEventListener('keyup', searchCoffee);
+
+    function addCoffee() {
+        if (nameAdd.value == '') {
+        } else {
+            let name = nameAdd.value;
+            let roast = coffeeAdd.value;
+            let id = coffees.length + 1;
+            let coffeeObj = {'id': id, 'name': name, 'roast': roast};
+            coffees.push(coffeeObj);
+            localStorage.setItem('coffees', JSON.stringify(coffees));
+        }
+    }
+
+    submitButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        addCoffee();
+        updateCoffees();
+    });
+
+    let clearButton = document.querySelector('#submit2');
+    clearButton.addEventListener('click', function () {
+        localStorage.clear();
+        updateCoffees();
+    })
 
 
 })();
