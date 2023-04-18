@@ -51,7 +51,7 @@
         var serachInput = searchInput.value;
         var filteredCoffees = [];
 
-        // give searchinput a value
+        // give search input a value
 
 
         console.log(selectedRoast);
@@ -61,6 +61,11 @@
             coffees.forEach(function (coffee) {
                 if (coffee.roast == selectedRoast) {
                     filteredCoffees.push(coffee);
+                }
+                else {
+                    if (serachInput == coffee) {
+                        filteredCoffees.push(coffee);
+                    }
                 }
             });
         }
