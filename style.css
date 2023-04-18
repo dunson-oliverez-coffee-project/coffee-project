@@ -32,8 +32,14 @@ main {
     padding: 30px 60px;
     grid-auto-rows: 1fr;
 }
+.Coffee.List nav {
+    font-size: 1em;
+}
+
 .Coffee.List nav a {
-    color: #352315 ;
+    font-size: 1.5em;
+    font-weight: bold;
+    color:#622A0F;
     text-decoration: none;
     margin-right: 20px;
 }
