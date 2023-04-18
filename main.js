@@ -49,6 +49,9 @@ function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
+    if(selectedRoast === "all"){
+        filteredCoffees = coffees
+    }else{
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
@@ -56,7 +59,7 @@ function updateCoffees(e) {
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
-
+// ADDED ALL COFFEES TO 'ALL' OPTION
 
 
 
