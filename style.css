@@ -1,5 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
 
 
 
@@ -25,6 +27,7 @@ main {
 
 /*First panel*/
 .Coffee.List {
+    font-family: 'Amatic SC', cursive;
     background: #9A7B4F ;
     padding: 30px 60px;
     grid-auto-rows: 1fr;
@@ -40,37 +43,67 @@ main {
     line-height: 2em;
 }
 .Coffee.List h1{
+    font-family: 'Cedarville Cursive', cursive;
     color: #2B1700 ;
     font-size: 3em;
 }
 .Coffee.List footer{
     align-self: end;
 }
-
+.Coffee.List p{
+    font-weight: bold;
+    font-style: italic;
+}
 
 /*middle panel*/
 .Coffee.About{
+    font-family: 'Amatic SC', cursive;
+    background-color: #3B270C;
     grid-template-rows: 3fr 1fr;
     overflow: hidden;
+    color:  #997950;
+}
+.Coffee.About h2{
+    font-family: 'Cedarville Cursive', cursive;
+
 }
 .Coffee.About img {
+    align-self: end;
+    padding-top: 1em;
+    padding-bottom: 1em;
     min-height: 100%;
     min-width: 100%;
-}
 
+}
+.Coffee.About p{
+    font-weight: bold;
+    font-style: italic;
+}
 
 /*right panel*/
 
 .Coffee.Photos{
+    font-family: 'Amatic SC', cursive;
+    background: #9A7B4F ;
     grid-template-rows: 1fr 3fr;
     overflow: hidden;
+    color: black;
+}
+.Coffee.Photos h2{
+    font-family: 'Cedarville Cursive', cursive;
+
 }
 .Coffee.Photos img {
+    padding-top: 3em;
+    padding-bottom: 3em;
     min-height: 100%;
     min-width: 100%;
 }
 
-
+.Coffee.Photos p{
+    font-weight: bold;
+    font-style: italic;
+}
 
 table {
     border-collapse: collapse;
