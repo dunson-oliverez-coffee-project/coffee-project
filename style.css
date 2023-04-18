@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 
 
 
@@ -27,7 +29,8 @@ main {
 
 /*First panel*/
 .Coffee.List {
-    font-family: 'Amatic SC', cursive;
+    /*font-family: 'Amatic SC', cursive;*/
+    font-family: 'Indie Flower', cursive;
     background: #9A7B4F ;
     padding: 30px 60px;
     grid-auto-rows: 1fr;
@@ -63,7 +66,8 @@ main {
 
 /*middle panel*/
 .Coffee.About{
-    font-family: 'Amatic SC', cursive;
+    /*font-family: 'Amatic SC', cursive;*/
+    font-family: 'Indie Flower', cursive;
     background-color: #3B270C;
     grid-template-rows: 3fr 1fr;
     overflow: hidden;
@@ -89,7 +93,8 @@ main {
 /*right panel*/
 
 .Coffee.Photos{
-    font-family: 'Amatic SC', cursive;
+    /*font-family: 'Amatic SC', cursive;*/
+    font-family: 'Indie Flower', cursive;
     background: #9A7B4F ;
     grid-template-rows: 1fr 3fr;
     overflow: hidden;
@@ -119,4 +124,45 @@ table {
 td, th {
     border: 1px solid black;
     padding: 5px 10px;
+}
+
+
+@media screen and (max-width: 1400px){
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+    .Coffee.Photos {
+        grid-column: span 2;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+}
+
+@media screen and (max-width: 960px){
+    main {
+        grid-template-columns: 100%;
+        grid-template-rows: 500px 400px 400px;
+    }
+    .Coffee.About{
+        grid-row: 2;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    .Coffee img {
+        width:100%
+    }
+
+}
+
+@media screen and (max-width: 680px){
+    main {
+        grid-template-rows: 700px 600px 600px;
+    }
+    .Coffee.About, .Coffee.Photos {
+        grid-template-columns: 1fr;
+        grid-column: span 1;
+        grid-template-rows: 1fr 1fr;
+        border-bottom: 1px solid #000000;
+    }
 }
