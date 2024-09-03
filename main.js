@@ -48,7 +48,7 @@
     function updateCoffees(e) {
         e.preventDefault(); // don't submit the form, we just want to update the data
         var selectedRoast = roastSelection.value;
-        var serachInput = searchInput.value;
+        var searchInput = searchInput.value;
         var filteredCoffees = [];
 
         // give searchinput a value
